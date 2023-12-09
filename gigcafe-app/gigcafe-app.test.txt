@@ -30,4 +30,7 @@ php artisan make:request CategoryStoreRequest
 php artisan make:migration create_category_menu_table --create="category_menu"
 
 
+showing image: php artisan storage:link
+
+
 https://www.alpinetoolbox.com/
