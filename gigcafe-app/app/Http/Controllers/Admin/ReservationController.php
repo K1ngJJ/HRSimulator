@@ -8,6 +8,7 @@ use App\Http\Requests\ReservationStoreRequest;
 use App\Models\Reservation;
 use App\Models\Table;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 
 class ReservationController extends Controller
@@ -26,7 +27,7 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        $tables = Table::where('status', TableStatus::Avalaiable)->get();
+        $tables = Table::where('status', TableStatus::Available)->get();
         return view('admin.reservations.create', compact('tables'));
     }
 
@@ -35,21 +36,30 @@ class ReservationController extends Controller
      */
     public function store(ReservationStoreRequest $request)
     {
-        $table = Table::findOrFail($request->table_id);
-        if ($request->guest_number > $table->guest_number) {
-            return back()->with('warning', 'Please choose the table base on guests.');
-        }
-        $request_date = Carbon::parse($request->res_date);
-        foreach ($table->reservations as $res) {
-            if ($res->res_date->format('Y-m-d') == $request_date->format('Y-m-d')) {
-                return back()->with('warning', 'This table is reserved for this date.');
+        try {
+            $table = Table::findOrFail($request->table_id);
+    
+            if ($request->guest_number > $table->guest_number) {
+                return back()->with('warning', 'Please choose the table based on the number of guests.');
             }
+    
+            $request_date = Carbon::parse($request->res_date);
+    
+            foreach ($table->reservations as $res) {
+                $reservationDate = Carbon::parse($res->res_date);
+    
+                if ($reservationDate->isSameDay($request_date)) {
+                    return back()->with('warning', 'This table is reserved for the selected date.');
+                }
+            }
+    
+            Reservation::create($request->validated());
+    
+            return redirect()->route('admin.reservations.index')->with('success', 'Reservation created successfully.');
+        } catch (ModelNotFoundException $e) {
+            return back()->with('error', 'Table not found.');
         }
-        Reservation::create($request->validated());
-
-        return to_route('admin.reservations.index')->with('success', 'Reservation created successfully.');
     }
-
     /**
      * Display the specified resource.
      */
@@ -63,7 +73,7 @@ class ReservationController extends Controller
      */
     public function edit(Reservation $reservation)
     {
-        $tables = Table::where('status', TableStatus::Avalaiable)->get();
+        $tables = Table::where('status', TableStatus::Available)->get();
         return view('admin.reservations.edit', compact('reservation', 'tables'));
     }
 
@@ -77,9 +87,11 @@ class ReservationController extends Controller
             return back()->with('warning', 'Please choose the table base on guests.');
         }
         $request_date = Carbon::parse($request->res_date);
-        $reservations = $table->reservations()->where('id', '!=', $reservation->id)->get();
-        foreach ($reservations as $res) {
-            if ($res->res_date->format('Y-m-d') == $request_date->format('Y-m-d')) {
+    
+        foreach ($table->reservations as $res) {
+            $reservationDate = Carbon::parse($res->res_date);
+
+            if ($reservationDate->isSameDay($request_date)) {
                 return back()->with('warning', 'This table is reserved for this date.');
             }
         }
