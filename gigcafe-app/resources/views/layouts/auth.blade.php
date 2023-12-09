@@ -20,6 +20,10 @@
                 <a href="/">
                     <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
                 </a>
+                
+            </div>
+            <div>
+                <a href="/" class="text-lg font-semibold tracking-widest uppercase rounded-lg focus:outline-none focus:shadow-outline text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400">HRSimulator</a>
             </div>
 
             <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">

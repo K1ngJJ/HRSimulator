@@ -13,13 +13,39 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Simulator') }}
                     </x-nav-link>
+
                     @if (Auth::user()->is_admin)
                     <x-nav-link :href="route('admin.index')" :active="request()->routeIs('admin.index')">
                         {{ __('Admin') }}
                     </x-nav-link>
-                @endif
+                    @endif
+              
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        <div class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400">
+                            {{ __('Home') }}
+                        </div>
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('categories.index')" :active="request()->routeIs('categories.index')">
+                        <div class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400">
+                            {{ __('Categories') }}
+                        </div>
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('menus.index')" :active="request()->routeIs('menus.index')">
+                        <div class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400">
+                            {{ __('Our Menu') }}
+                        </div>
+                    </x-nav-link>
+
+                    <x-nav-link :href="route('reservations.step.one')" :active="request()->routeIs('reservations.step.one')">
+                        <div class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 hover:text-green-400">
+                            {{ __('Make Reservation') }}
+                        </div>
+                    </x-nav-link>
+                   
                 </div>
             </div>
 
