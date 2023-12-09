@@ -1,0 +1,33 @@
+gigcafe-app.test
+
+laravel new gigcafe-app
+cd gigcafe-app
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install && npm run dev
+php artisan make:seeder Admin
+php artisan migrate:fresh --seed
+php artisan make:middleware Admin
+php artisan make:controller Admin/AdminController
+
+
+npm install laravel-mix --save-dev
+npm run watch
+
+php artisan make:model Category -m
+php artisan make:model Menu -m
+php artisan make:model Table -m
+php artisan make:model Reservation -m
+php artisan migrate
+
+php artisan make:controller Admin/MenuController -r
+php artisan make:controller Admin/CategoryController -r
+php artisan make:controller Admin/TableController -r
+php artisan make:controller Admin/ReservationController -r
+
+
+php artisan make:request CategoryStoreRequest
+php artisan make:migration create_category_menu_table --create="category_menu"
+
+
+https://www.alpinetoolbox.com/
