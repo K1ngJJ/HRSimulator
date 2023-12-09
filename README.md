@@ -33,3 +33,8 @@ Hotel Room Booking &amp;&amp; Restaurant Table Reservation Simulator
     <a href="https://github.com/tailwindcss/tailwindcss/blob/master/LICENSE"><img src="https://img.shields.io/npm/l/tailwindcss.svg" alt="License"></a>
 </p>
 
+## Reference
+- **[Laraveller](https://www.youtube.com/@Laraveller)**
+- **[Restaurant Template](https://larainfo.com/blogs/tailfood-free-tailwind-css-restaurant-template)**
+- **[Flowbite](https://flowbite.com/)**
+
