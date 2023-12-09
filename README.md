@@ -1,6 +1,6 @@
 # HRSimulator
 Hotel Room Booking &amp;&amp; Restaurant Table Reservation Simulator
-##### [Laravel + Tailwind_Blade]
+##### [Laravel + TailwindCss_Blade]
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
@@ -34,7 +34,6 @@ Hotel Room Booking &amp;&amp; Restaurant Table Reservation Simulator
 </p>
 
 ## Reference
-- **[Laraveller](https://www.youtube.com/@Laraveller)**
 - **[Restaurant Template](https://larainfo.com/blogs/tailfood-free-tailwind-css-restaurant-template)**
 - **[Flowbite](https://flowbite.com/)**
 
