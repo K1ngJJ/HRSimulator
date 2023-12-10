@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 08, 2023 at 10:45 AM
+-- Generation Time: Dec 10, 2023 at 12:42 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -41,7 +41,7 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(9, 'category 1', 'Puno tungong langit', 'public/categories/9j1E5tQRzlDgf1Yk6uJYMk6qzs2xRF6y1wEGzoZY.jpg', '2023-12-07 17:53:56', '2023-12-07 23:15:07');
+(10, 'Fuds Category', 'Make Reservation Now!', 'public/categories/nDjmjg2FfxrhN9N2lkHhSxGqvo0SIz4d61uvUsxx.jpg', '2023-12-10 03:25:08', '2023-12-10 03:25:08');
 
 -- --------------------------------------------------------
 
@@ -59,8 +59,10 @@ CREATE TABLE `category_menu` (
 --
 
 INSERT INTO `category_menu` (`category_id`, `menu_id`) VALUES
-(9, 2),
-(9, 4);
+(10, 5),
+(10, 6),
+(10, 7),
+(10, 9);
 
 -- --------------------------------------------------------
 
@@ -99,8 +101,10 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `name`, `description`, `image`, `price`, `created_at`, `updated_at`) VALUES
-(2, 'Sige kainin mo yang building kung kaya mo', 'chill kaya to!', 'public/menus/rcbX9jT1LhTsvOxeZOQ9UEPikHYclltjSMgRbGhR.jpg', '134.00', '2023-12-06 21:13:47', '2023-12-07 22:40:03'),
-(4, 'cookies isang kagat tigok', 'Crunchy na pyesa', 'public/menus/gX3mPP04BkwnmQvzVHADJpgwxoFgJQh5ikiKTqDI.jpg', '25.00', '2023-12-07 20:51:26', '2023-12-08 00:37:40');
+(5, 'PASTA', 'Roasted Garlic Pasta with Tomatoes and Spinach.', 'public/menus/lknG8aO7eVPYwqi9U7ORl0cBxpwPNmsCodHOAfie.jpg', '60.00', '2023-12-10 03:25:51', '2023-12-10 03:25:51'),
+(6, 'ALFREDO', 'Alfredo With Shrimp', 'public/menus/kqH9BJ1CzzK5T2C8vnpwUBTG8Mr7AoeS2LXHBYKN.jpg', '79.99', '2023-12-10 03:28:12', '2023-12-10 03:28:12'),
+(7, 'SALMON', 'Salmon With Lemon Butter and Sauce', 'public/menus/SUjw9yISdBEEXOoUgSLqiH8VUekF1V08qq21pTNu.jpg', '49.99', '2023-12-10 03:29:00', '2023-12-10 03:29:00'),
+(9, 'PANCAKES', 'Honey fluffy Pancakes', 'public/menus/ADiwvsWv8Guz7Musp8In3OiQzsirdIgZG5qli9gU.jpg', '30.00', '2023-12-10 03:33:36', '2023-12-10 03:33:36');
 
 -- --------------------------------------------------------
 
@@ -146,6 +150,7 @@ CREATE TABLE `password_reset_tokens` (
 --
 
 INSERT INTO `password_reset_tokens` (`email`, `token`, `created_at`) VALUES
+('pachecoking38@gmail.com', '$2y$12$wLouL9pTFcLVf/50WjPgvu3wCzzshpLFFZsiLkIZFoWMV1qsKEblO', '2023-12-10 02:20:51'),
 ('student@gmail.com', '$2y$12$ASTC4docAjOXeyayT7rNPeoofKO19TJz8SkKVsZC9GgSI6fNRoogi', '2023-12-07 23:38:54');
 
 -- --------------------------------------------------------
@@ -191,7 +196,8 @@ CREATE TABLE `reservations` (
 --
 
 INSERT INTO `reservations` (`id`, `first_name`, `last_name`, `email`, `tel_number`, `res_date`, `table_id`, `guest_number`, `created_at`, `updated_at`) VALUES
-(9, 'Student', 'Person', 'student@gmail.com', '09566637613', '2023-12-14 18:25:00', 4, 6, '2023-12-07 22:20:20', '2023-12-07 22:20:20');
+(9, 'Student', 'Person', 'student@gmail.com', '09566637613', '2023-12-14 18:25:00', 4, 6, '2023-12-07 22:20:20', '2023-12-07 22:20:20'),
+(12, 'Just', 'Test', 'test@gmail.com', '09566637613', '2023-12-12 18:53:00', 3, 2, '2023-12-08 02:53:57', '2023-12-10 03:40:52');
 
 -- --------------------------------------------------------
 
@@ -241,8 +247,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `is_admin`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@gmail.com', '2023-12-05 18:59:35', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1, 'vzO4Df7ErtflbD1ChNNjKABPbFklwMmDnPQVVSCarlk6dDmvHogpx9ahVzOB', '2023-12-05 18:59:36', '2023-12-05 18:59:36'),
-(4, 'Student', 'student@gmail.com', NULL, '$2y$12$XDn9Le76VDaUst5Jkc8jvu2PQtSAQU1uQIq4zJf8nYWfG8HBLT2SW', 0, NULL, '2023-12-07 23:43:23', '2023-12-07 23:43:23');
+(1, 'Admin', 'admin@gmail.com', '2023-12-05 18:59:35', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 1, 'Vf2sVq9oWA3bvZuQLUsDA9zZPnuzzAYSLi5Oo1jgeipNLrsb47HKwQznf8z7', '2023-12-05 18:59:36', '2023-12-05 18:59:36'),
+(6, 'User', 'user@gmail.com', NULL, '$2y$12$7RZHHJxM0cVh0/zZzkDO6e7zHq1z6jme4gtuPtydiKwAAeaBoFf3q', 0, NULL, '2023-12-10 02:51:55', '2023-12-10 02:51:55');
 
 --
 -- Indexes for dumped tables
@@ -321,7 +327,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -333,7 +339,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -351,7 +357,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tables`
@@ -363,7 +369,7 @@ ALTER TABLE `tables`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
