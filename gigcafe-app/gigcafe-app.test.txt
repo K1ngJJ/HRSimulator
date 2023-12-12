@@ -40,8 +40,15 @@ https://www.alpinetoolbox.com/
 
 
 
+menus sql details:
+INSERT INTO `categories` (`id`, `name`, `description`, `image`, `created_at`, `updated_at`) VALUES
+(10, 'Fuds Category', 'Make Reservation Now!', 'public/categories/nDjmjg2FfxrhN9N2lkHhSxGqvo0SIz4d61uvUsxx.jpg', '2023-12-10 03:25:08', '2023-12-10 03:25:08');
 
-HOTEL
-php artisan key:generate
+
+INSERT INTO `menus` (`id`, `name`, `description`, `image`, `price`, `created_at`, `updated_at`) VALUES
+(5, 'PASTA', 'Roasted Garlic Pasta with Tomatoes and Spinach.', 'public/menus/lknG8aO7eVPYwqi9U7ORl0cBxpwPNmsCodHOAfie.jpg', '60.00', '2023-12-10 03:25:51', '2023-12-10 03:25:51'),
+(6, 'ALFREDO', 'Alfredo With Shrimp', 'public/menus/kqH9BJ1CzzK5T2C8vnpwUBTG8Mr7AoeS2LXHBYKN.jpg', '79.99', '2023-12-10 03:28:12', '2023-12-10 03:28:12'),
+(7, 'SALMON', 'Salmon With Lemon Butter and Sauce', 'public/menus/SUjw9yISdBEEXOoUgSLqiH8VUekF1V08qq21pTNu.jpg', '49.99', '2023-12-10 03:29:00', '2023-12-10 03:29:00'),
+(9, 'PANCAKES', 'Honey fluffy Pancakes', 'public/menus/ADiwvsWv8Guz7Musp8In3OiQzsirdIgZG5qli9gU.jpg', '30.00', '2023-12-10 03:33:36', '2023-12-10 03:33:36');
 
 
