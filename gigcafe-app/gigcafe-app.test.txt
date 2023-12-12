@@ -34,3 +34,14 @@ showing image: php artisan storage:link
 
 
 https://www.alpinetoolbox.com/
+
+
+
+
+
+
+
+HOTEL
+php artisan key:generate
+
+

@@ -17,7 +17,7 @@
                         <p class="leading-normal text-gray-700">{{ $menu->description }}.</p>
                     </div>
                     <div class="flex items-center justify-between p-4">
-                        <span class="text-xl text-green-600">${{ $menu->price }}</span>
+                        <span class="text-xl text-green-600">₱{{ $menu->price }}</span>
                     </div>
                 </div>
             @endforeach
