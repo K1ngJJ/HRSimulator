@@ -12,6 +12,11 @@ use App\Http\Controllers\Frontend\MenuController as FrontendMenuController;
 use App\Http\Controllers\Frontend\ReservationController as FrontendReservationController;
 use App\Http\Controllers\Frontend\WelcomeController;
 
+use App\Http\Controllers\StripeController;
+use App\Http\Controllers\CartController;
+
+use App\Http\Controllers\RoomController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +34,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', [WelcomeController::class, 'index']);
+//Route::get('/room', [RoomController::class, 'index'])->name('room.index');
 Route::get('/categories', [FrontendCategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/{category}', [FrontendCategoryController::class, 'show'])->name('categories.show');
 Route::get('/menus', [FrontendMenuController::class, 'index'])->name('menus.index');
@@ -37,6 +43,17 @@ Route::post('/reservation/step-one', [FrontendReservationController::class, 'sto
 Route::get('/reservation/step-two', [FrontendReservationController::class, 'stepTwo'])->name('reservations.step.two');
 Route::post('/reservation/step-two', [FrontendReservationController::class, 'storeStepTwo'])->name('reservations.store.step.two');
 Route::get('/thankyou', [WelcomeController::class, 'thankyou'])->name('thankyou');
+
+Route::post('/session', [StripeController::class, 'session'])->name('session');
+Route::get('/success', [StripeController::class, 'success'])->name('success');
+Route::get('/cancel', [StripeController::class, 'cancel'])->name('cancel');
+ 
+Route::get('/index', [CartController::class, 'index']);
+Route::get('cart', [CartController::class, 'cart'])->name('cart');
+Route::get('addToCart/{id}', [CartController::class, 'addToCart'])->name('addToCart');
+Route::patch('update-cart', [CartController::class, 'update'])->name('update_cart');
+Route::delete('remove-from-cart', [CartController::class, 'remove'])->name('remove_from_cart');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
