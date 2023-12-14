@@ -16,5 +16,10 @@ class Category extends Model
         return $this->belongsToMany(Menu::class, 'category_group');
     }
 
+    public function rooms()
+    {
+        return $this->belongsToMany(Room::class, 'category_group');
+    }
+
   
 }

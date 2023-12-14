@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Restaurant Simulator') }}
+            {{ __('HRSimulator') }}
         </h2>
     </x-slot>
 
@@ -10,12 +10,10 @@
    style="background-image: url('images/beans-1834984_960_720.jpg')">
    <h1
        class="font-mono text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 md:text-center sm:leading-none lg:text-5xl">
-       <span class="inline md:block">Welcome To GigCafe Restaurant</span>
+       <span class="inline md:block">Welcome To Hotel & Restaurant Simulator</span>
    </h1>
    <div class="mx-auto mt-2 text-green-50 md:text-center lg:text-lg">
-       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta voluptatem ab necessitatibus illo
-       praesentium
-       culpa excepturi quae commodi quaerat,
+    <hr>
    </div>
    <div class="flex flex-col items-center mt-12 text-center">
        <span class="relative inline-flex w-full md:w-auto">
@@ -23,6 +21,11 @@
                class="inline-flex items-center justify-center px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 focus:outline-none">
                Make your Reservation
            </a>
+           
+           <a href="{{ route('reservations.step.one') }}" type="button"
+               class="inline-flex items-center justify-center px-6 py-2 text-base font-bold leading-6 text-white bg-green-600 rounded-full lg:w-full md:w-auto hover:bg-green-500 focus:outline-none">
+               Make your Reservation
+           </a>     
    </div>
 </div>
 <!-- End Main Hero Content -->
@@ -133,7 +136,7 @@
                    src="https://images.unsplash.com/photo-1499714608240-22fc6ad53fb2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80">
            </div>
            <div>
-               <h2 class="text-3xl font-semibold text-gray-800">Food</h2>
+               <h2 class="text-3xl font-semibold text-gray-800">Booking Room</h2>
                <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores
                    deserunt
                    ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis
@@ -150,7 +153,7 @@
                    src="https://cdn.pixabay.com/photo/2018/01/04/21/15/young-3061652__340.jpg">
            </div>
            <div>
-               <h2 class="text-3xl font-semibold text-gray-800">Food</h2>
+               <h2 class="text-3xl font-semibold text-gray-800">Special Food & More Menu</h2>
                <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores
                    deserunt
                    ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis
@@ -167,7 +170,7 @@
                    src="https://cdn.pixabay.com/photo/2018/01/18/17/48/purchase-3090818__340.jpg">
            </div>
            <div>
-               <h2 class="text-3xl font-semibold text-gray-800">Food</h2>
+               <h2 class="text-3xl font-semibold text-gray-800">Reserve Table</h2>
                <p class="mt-2 text-gray-600">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolores
                    deserunt
                    ea doloremque natus error, rerum quas odio quaerat nam ex commodi hic, suscipit in a veritatis
